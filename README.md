@@ -1,4 +1,4 @@
-   MXNet 中的operator既包含了实际的计算也包含了一些附加信息的 class, 如Layer的参数(Param), Layer的属性(Prop)等, 这些附加信息可以帮助我们的系统
+    MXNet 中的operator既包含了实际的计算也包含了一些附加信息的 class, 如Layer的参数(Param), Layer的属性(Prop)等, 这些附加信息可以帮助我们的系统
 来实现原地更新和自动微分等优化. mxnet所有operator的计算都是基于系统提供的数据结构 mshadow::TBob, 输入是TBlob的数据, 输出是Tensor的数据. TBlob这
 一数据结构类似于张量(Tensor), 只是TBlob更灵活. 现对mxnet的operator的学习记录进行详细说明. 首先对mxnet的Activation操作进行详细说明, 源码见
 src/operator/activation-inl.h. 为了说明激活函数的操作情况, 本文将softplus激活函数也做成了mxnet的Layer(mxnet本身已经实现了softplus激活函数的功
